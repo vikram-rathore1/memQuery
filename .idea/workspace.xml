@@ -9,7 +9,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a155638d-0ac1-4eb5-bf34-fecbbb055e6b" name="Default Changelist" comment="" />
+    <list default="true" id="a155638d-0ac1-4eb5-bf34-fecbbb055e6b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/commons.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/csv.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframe.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframeRow.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/query/query.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/query/queryCondition.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/query/queryField.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/query/queryView.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/util/timer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataset.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imdb_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old/imdb_1.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imdb_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old/imdb_small.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/csv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/util.h" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,15 +38,21 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectId" id="1ZX0SPV3Kv1WrR4LRw63c6MtKtQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/dataframe" />
       <recent name="$PROJECT_DIR$/old" />
       <recent name="$PROJECT_DIR$/resources" />
       <recent name="$PROJECT_DIR$/util" />
@@ -56,11 +81,22 @@
       <option name="presentableId" value="Default" />
       <updated>1584970130319</updated>
       <workItem from="1584970131725" duration="7154000" />
-      <workItem from="1584995360038" duration="17238000" />
+      <workItem from="1584995360038" duration="27084000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
