@@ -10,11 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a155638d-0ac1-4eb5-bf34-fecbbb055e6b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/commons.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframe.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframe.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframeRow.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframeRow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/query/query.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/query/query.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,7 +69,7 @@
       <updated>1584970130319</updated>
       <workItem from="1584970131725" duration="7154000" />
       <workItem from="1584995360038" duration="34918000" />
-      <workItem from="1590859453601" duration="1947000" />
+      <workItem from="1590859453601" duration="5888000" />
     </task>
     <servers />
   </component>

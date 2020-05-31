@@ -35,7 +35,8 @@ int main() {
 		    field("imdbvotes"),
 		    field("imdbrating"),
 		    field("year"),
-		    field("rated")
+		    field("rated"),
+		    field("bogus_field")
 	)
 
 	-> from(

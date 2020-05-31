@@ -60,15 +60,14 @@ class Query {
                 for (int i = 0; i < _select.size(); i++) requiredFields.push_back(_select[i] -> name());
             }
 
-            int rowIndex = 0;
-            while (rowIndex < _from -> dataframe() -> size() && df -> size() < rowsToFetch) {
-                DataframeRow * dfr_raw = _from -> dataframe() -> getRowByIndex(rowIndex);
-                DataframeRow * dfr = (_select_all) ? dfr_raw : _from -> dataframe() -> getRowFieldsByIndex(rowIndex, requiredFields);
+            DataframeRow *dfr_raw = _from -> dataframe() -> getHead();
+            while (dfr_raw && df -> size() < rowsToFetch) {
+                DataframeRow * dfr = (_select_all) ? dfr_raw : dfr_raw -> getRowWithFields(requiredFields);
 
-                if (!_where || _where -> evaluateRow(dfr_raw)) {
+                if (!_where || _where -> evaluateRow(dfr_raw))
                     df -> addRow(dfr);
-                }
-                rowIndex++;
+
+                dfr_raw = dfr_raw -> getNext();
             }
 
             return df;
