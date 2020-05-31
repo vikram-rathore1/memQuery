@@ -44,7 +44,8 @@ Dataframe * Dataframe::loadCsv(Csv * csv) {
     vector<string> headers = csv -> getHeaders();
     for (int i = 0; i < headers.size(); i++) {
         // todo: auto schema detection, if chosen
-        DataframeSchemaField * sf = new DataframeSchemaField(headers[i], STRING, 50);
+        DataframeSchemaField * sf = new DataframeSchemaField(headers[i], STRING);
+        sf -> length(50);
         _schema[to_lower(headers[i])] = sf;
     }
 

@@ -51,7 +51,7 @@ int main() {
 	                field("rated")->Equals("PG-13")
 	                )
 	        )
-	-> limit(10)
+//	-> limit(10)
 	-> getDataframe()
 	-> show();
 
@@ -72,7 +72,10 @@ int main() {
 
 // ----------------------------------------------------------------------------------------------------------------
 
-//    DataframeSchema * schema = new DataframeSchema();
+//    DataframeSchema * schema = new DataframeSchema(
+//      schemaField("id", Int) -> length(20) -> null(false) -> default(0) -> primaryKey(true),
+//      schemaField("asd", String) -> default("aaaa")
+//    );
 //    schema ->
 //        addField( IntField("id")->defaultValue(0) );
 

@@ -15,28 +15,34 @@ class DataframeSchemaField {
 
     string _name;
     Datatype _type;
-    int _length;
-    bool _nullable;
+    unsigned int _length;
+    bool _nullable, _indexed;
 
-    static string dataTypeToString(Datatype t) {
-        switch (t) {
-            case INT:      return "Int";
-            case LONG:     return "Long";
-            case LONGLONG: return "LongLong";
-            case STRING:   return "String";
-            case FLOAT:    return "Float";
-            case DOUBLE:   return "Double";
-            case CSV:      return "Csv";
-            default:       return "";
-        }
-    }
+    public:
+        DataframeSchemaField(string, Datatype);
+        DataframeSchemaField* length(unsigned int);
+        DataframeSchemaField* nullable(bool);
 
-public:
-    DataframeSchemaField(string name, Datatype type, int length) : _name(name), _type(type), _length(length) {}
-    DataframeSchemaField(string name, Datatype type) : _name(name), _type(type) {}
-    string type() { return dataTypeToString(_type); }
-    string name() { return _name; }
+        DataframeSchemaField* defaultValue(int);
+        DataframeSchemaField* defaultValue(long);
+        DataframeSchemaField* defaultValue(long long);
+        DataframeSchemaField* defaultValue(string);
+        DataframeSchemaField* defaultValue(float);
+        DataframeSchemaField* defaultValue(double);
+
+        DataframeSchemaField* ignoreInvalidTypeValues(double);
+
+        string name();
+        string type();
 
 };
+
+DataframeSchemaField::DataframeSchemaField(string name, Datatype type) : _name(name), _type(type) {}
+
+string DataframeSchemaField::name() { return _name; }
+
+string DataframeSchemaField::type() { return dataTypeToString(_type); }
+
+DataframeSchemaField* DataframeSchemaField::length(unsigned int len) { _length = len; return this; }
 
 #endif

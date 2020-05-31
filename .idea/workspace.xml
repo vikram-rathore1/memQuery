@@ -10,24 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a155638d-0ac1-4eb5-bf34-fecbbb055e6b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/commons.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/csv.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframe.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframeRow.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/query/query.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/query/queryCondition.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/query/queryField.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/query/queryView.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/util/timer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataset.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imdb_1.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old/imdb_1.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imdb_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/old/imdb_small.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/csv.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/util.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/commons.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/commons.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframe.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframe.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframeSchemaField.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1584970130319</updated>
       <workItem from="1584970131725" duration="7154000" />
-      <workItem from="1584995360038" duration="27084000" />
+      <workItem from="1584995360038" duration="34918000" />
+      <workItem from="1590859453601" duration="1947000" />
     </task>
     <servers />
   </component>
@@ -93,7 +82,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
