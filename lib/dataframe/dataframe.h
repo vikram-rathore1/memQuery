@@ -97,7 +97,7 @@ DataframeRow * Dataframe::getTail() {
 void Dataframe::show(int n) {
     n = min(n, _totalRows);
     DataframeRow * ptr = _head;
-    while (n && ptr) {
+    for (int i = 0; i < n && ptr; i++) {
         ptr -> print();
         ptr = ptr -> getNext();
         n--;
