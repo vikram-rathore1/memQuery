@@ -49,12 +49,16 @@ int main() {
 	        condition(
 	                field("year")->Equals("1994"),
 	                And(),
-	                field("rated")->Equals("PG-13")
+	                condition(
+                            field("rated")->Equals("PG-13"),
+	                        Or(),
+                            field("rated")->Equals("PG")
+	                        )
 	                )
 	        )
 //	-> limit(10)
 	-> getDataframe()
-	-> show();
+	-> show(20);
 
     cout << "Query took " << t.getElapsedTime() << " sec\n";
 	return 0;

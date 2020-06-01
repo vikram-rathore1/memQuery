@@ -47,9 +47,9 @@ bool QueryCondition::evaluateRow(DataframeRow * row) {
     if (children.size()) {
 
         bool ans = true;
+        QueryCondition * boolean = NULL;
         for (int i = 0; i < children.size(); i++) {
             QueryConditionType qt = children[i] -> getType();
-            QueryCondition * boolean = NULL;
 
             if (qt == BOOLEAN) {
                 boolean = children[i];
