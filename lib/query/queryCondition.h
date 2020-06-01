@@ -21,7 +21,6 @@ class QueryCondition {
     vector<QueryCondition*> children;
 
     public:
-        QueryCondition() {}
         QueryCondition(QueryConditionOperator qco) : condOperator(qco) {}
         QueryCondition(string fl, QueryConditionOperator cond, string val) : field(fl), condOperator(cond), value(val) {}
         QueryCondition(vector<QueryCondition*> chld) : children(chld) {}
@@ -40,21 +39,18 @@ QueryConditionType QueryCondition::getType() {
 
 bool QueryCondition::evaluateRow(DataframeRow * row) {
     if (children.size()) {
-
         bool ans = true;
         QueryCondition * boolean = NULL;
-        for (int i = 0; i < children.size(); i++) {
-            QueryConditionType qt = children[i] -> getType();
 
-            if (qt == BOOLEAN) {
+        for (QueryCondition* child: children) {
+            if (child -> getType() == BOOLEAN)
                 boolean = children[i];
-            }
             else {
                 if (boolean) {
-                    ans = boolean -> evaluateBoolean(ans, children[i] -> evaluateRow(row));
+                    ans = boolean -> evaluateBoolean(ans, child -> evaluateRow(row));
                     boolean = NULL;
                 }
-                else ans &= children[i] -> evaluateRow(row);
+                else ans &= child -> evaluateRow(row);
             }
         }
         return ans;
