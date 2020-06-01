@@ -19,19 +19,29 @@ class QueryField {
 
     public:
         QueryField(string name) : _name(name) {}
-        QueryField * as(string alias) {
-            _as = alias;
-            return this;
-        }
-        QueryCondition * Equals(string val) {
-            return new QueryCondition(_name, EQUALS, val);
-        }
-        string name() { return _name; }
-        void print() {
-            cout << "QueryField {" << "name: " << _name << ", as: " << _as << "}\n";
-        }
+        QueryField * as(string);
+        QueryCondition * Equals(string);
+        string name();
+        void print();
 
 };
+
+QueryField * QueryField::as(string alias) {
+    _as = alias;
+    return this;
+}
+
+QueryCondition * QueryField::Equals(string val) {
+    return new QueryCondition(_name, EQUALS, val);
+}
+
+string QueryField::name() {
+    return _name;
+}
+
+void QueryField::print() {
+    cout << "QueryField {" << "name: " << _name << ", as: " << _as << "}\n";
+}
 
 QueryField * field(string name) {
     return new QueryField(name);
