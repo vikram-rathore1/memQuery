@@ -10,7 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a155638d-0ac1-4eb5-bf34-fecbbb055e6b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/dataframe/dataframe.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dataframe/dataframe.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/query/queryCondition.h" beforeDir="false" afterPath="$PROJECT_DIR$/lib/query/queryCondition.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +66,7 @@
       <updated>1584970130319</updated>
       <workItem from="1584970131725" duration="7154000" />
       <workItem from="1584995360038" duration="34918000" />
-      <workItem from="1590859453601" duration="6133000" />
+      <workItem from="1590859453601" duration="7369000" />
     </task>
     <servers />
   </component>

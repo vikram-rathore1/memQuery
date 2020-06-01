@@ -12,6 +12,7 @@ class QueryCondition;
 template<typename ...Conditions>
 QueryCondition * condition(Conditions...);
 QueryCondition * And();
+QueryCondition * Or();
 
 #include <bits/stdc++.h>
 #include "../dataframe/dataframeRow.h"
@@ -29,53 +30,60 @@ class QueryCondition {
         QueryCondition(QueryConditionOperator qco) : condOperator(qco) {}
         QueryCondition(string fl, QueryConditionOperator cond, string val) : field(fl), condOperator(cond), value(val) {}
         QueryCondition(vector<QueryCondition*> chld) : children(chld) {}
-        void addChild(QueryCondition* qc) { children.push_back(qc); }
-        QueryConditionType getType() {
-            if (field.length()) return FIELD;
-            if (children.size()) return NESTED;
-            return BOOLEAN;
-        }
-        bool evaluateRow(DataframeRow * row) {
-            if (children.size()) {
-
-                bool ans = true;
-                for (int i = 0; i < children.size(); i++) {
-                    QueryConditionType qt = children[i] -> getType();
-                    QueryCondition * boolean = NULL;
-
-                    if (qt == BOOLEAN) {
-                        boolean = children[i];
-                    }
-                    else {
-                        if (boolean) {
-                            ans = boolean -> evaluateBoolean(ans, children[i] -> evaluateRow(row));
-                            boolean = NULL;
-                        }
-                        else ans &= children[i] -> evaluateRow(row);
-                    }
-                }
-                return ans;
-
-            }
-            string fieldVal = row -> get(field);
-            // todo: allow checking field equal to null
-            // todo: switch case for various other operators
-            return fieldVal == value;
-        }
-        bool evaluateBoolean(bool prev, bool next) {
-            if (condOperator == AND) return prev && next;
-            return prev || next;
-        }
-        void print() {
-            cout << "QueryCondition: {field: " << field << ", value: " << value << ", condOperator: " << condOperator << ", children: [";
-            if (children.size()) cout << "\n";
-            for (int i = 0; i < children.size(); i++) {
-                children[i] -> print();
-            }
-            cout << "]}\n";
-        }
+        QueryConditionType getType();
+        bool evaluateRow(DataframeRow*);
+        bool evaluateBoolean(bool, bool);
+        void print();
 
 };
+
+QueryConditionType QueryCondition::getType() {
+    if (field.length()) return FIELD;
+    if (children.size()) return NESTED;
+    return BOOLEAN;
+}
+
+bool QueryCondition::evaluateRow(DataframeRow * row) {
+    if (children.size()) {
+
+        bool ans = true;
+        for (int i = 0; i < children.size(); i++) {
+            QueryConditionType qt = children[i] -> getType();
+            QueryCondition * boolean = NULL;
+
+            if (qt == BOOLEAN) {
+                boolean = children[i];
+            }
+            else {
+                if (boolean) {
+                    ans = boolean -> evaluateBoolean(ans, children[i] -> evaluateRow(row));
+                    boolean = NULL;
+                }
+                else ans &= children[i] -> evaluateRow(row);
+            }
+        }
+        return ans;
+
+    }
+    string fieldVal = row -> get(field);
+    // todo: allow checking field equal to null
+    // todo: switch case for various other operators
+    return fieldVal == value;
+}
+
+bool QueryCondition::evaluateBoolean(bool prev, bool next) {
+    if (condOperator == AND) return prev && next;
+    return prev || next;
+}
+
+void QueryCondition::print() {
+    cout << "QueryCondition: {field: " << field << ", value: " << value << ", condOperator: " << condOperator << ", children: [";
+    if (children.size()) cout << "\n";
+    for (int i = 0; i < children.size(); i++) {
+        children[i] -> print();
+    }
+    cout << "]}\n";
+}
 
 template<typename ...Conditions>
 QueryCondition * condition(Conditions... conditions) {
@@ -85,6 +93,10 @@ QueryCondition * condition(Conditions... conditions) {
 
 QueryCondition * And() {
     return new QueryCondition(AND);
+}
+
+QueryCondition * Or() {
+    return new QueryCondition(OR);
 }
 
 #endif
