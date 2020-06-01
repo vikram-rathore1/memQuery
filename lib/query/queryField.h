@@ -10,7 +10,6 @@
 using namespace std;
 
 class QueryField;
-QueryField * field(string);
 
 class QueryField {
 
@@ -20,8 +19,8 @@ class QueryField {
     public:
         QueryField(string name) : _name(name) {}
         QueryField * as(string);
-        QueryCondition * Equals(string);
         string name();
+        QueryCondition * Equals(string);
         void print();
 
 };
@@ -31,20 +30,16 @@ QueryField * QueryField::as(string alias) {
     return this;
 }
 
-QueryCondition * QueryField::Equals(string val) {
-    return new QueryCondition(_name, EQUALS, val);
-}
-
 string QueryField::name() {
     return _name;
 }
 
-void QueryField::print() {
-    cout << "QueryField {" << "name: " << _name << ", as: " << _as << "}\n";
+QueryCondition * QueryField::Equals(string val) {
+    return new QueryCondition(_name, EQUALS, val);
 }
 
-QueryField * field(string name) {
-    return new QueryField(name);
+void QueryField::print() {
+    cout << "QueryField {" << "name: " << _name << ", as: " << _as << "}\n";
 }
 
 #endif

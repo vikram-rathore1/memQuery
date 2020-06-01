@@ -7,6 +7,7 @@
 #include "lib/csv.h"
 #include "lib/dataframe/dataframe.h"
 #include "lib/query/query.h"
+#include "lib/generators.h"
 using namespace std;
 
 int main() {

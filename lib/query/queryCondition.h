@@ -9,11 +9,6 @@ enum QueryConditionOperator {EQUALS, AND, OR};
 enum QueryConditionType {FIELD, BOOLEAN, NESTED};
 class QueryCondition;
 
-template<typename ...Conditions>
-QueryCondition * condition(Conditions...);
-QueryCondition * And();
-QueryCondition * Or();
-
 #include <bits/stdc++.h>
 #include "../dataframe/dataframeRow.h"
 using namespace std;
@@ -83,20 +78,6 @@ void QueryCondition::print() {
         children[i] -> print();
     }
     cout << "]}\n";
-}
-
-template<typename ...Conditions>
-QueryCondition * condition(Conditions... conditions) {
-    vector<QueryCondition*> chld = {conditions...};
-    return new QueryCondition(chld);
-}
-
-QueryCondition * And() {
-    return new QueryCondition(AND);
-}
-
-QueryCondition * Or() {
-    return new QueryCondition(OR);
 }
 
 #endif
