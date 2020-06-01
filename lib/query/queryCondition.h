@@ -44,7 +44,7 @@ bool QueryCondition::evaluateRow(DataframeRow * row) {
 
         for (QueryCondition* child: children) {
             if (child -> getType() == BOOLEAN)
-                boolean = children[i];
+                boolean = child;
             else {
                 if (boolean) {
                     ans = boolean -> evaluateBoolean(ans, child -> evaluateRow(row));

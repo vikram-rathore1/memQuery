@@ -100,7 +100,6 @@ void Dataframe::show(int n) {
     for (int i = 0; i < n && ptr; i++) {
         ptr -> print();
         ptr = ptr -> getNext();
-        n--;
     }
     cout << "Showing " << n << " out of " << _totalRows << " rows\n";
 }

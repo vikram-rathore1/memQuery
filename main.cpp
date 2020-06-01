@@ -50,6 +50,8 @@ int main() {
 	        condition(
 	                field("year")->Equals("1994"),
 	                And(),
+                    field("imdbrating")->Equals("7.3"),
+	                And(),
 	                condition(
                             field("rated")->Equals("PG-13"),
 	                        Or(),
